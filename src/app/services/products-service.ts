@@ -20,14 +20,16 @@ export class ProductService extends ServiceBase {
       }
     );
 
-    if (!productResponse.ok) {
+    const contentType = productResponse.headers.get("content-type");
+    const responseText = await productResponse.text();
+
+    if (!productResponse.ok || !contentType?.includes("application/json")) {
       throw new Error(
-        `Product API failed: ${productResponse.status} ${productResponse.statusText}`
+        `Product API error: ${productResponse.status}; Content-Type: ${contentType}; Response: ${responseText.slice(0, 300)}`
       );
     }
 
-    const data: Product[] = await productResponse.json();
-    return data;
+    return JSON.parse(responseText) as Product[];
   };
 
   // single product
