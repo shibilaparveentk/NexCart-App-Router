@@ -11,7 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "NexCart | Online Shopping",
-  description: "Discover your favourite products at NexCart. Shop electronics, jewellery, men's and women's clothing with ease.",
+  description:
+    "Discover your favourite products at NexCart. Explore electronics, fashion, beauty, home essentials and more.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

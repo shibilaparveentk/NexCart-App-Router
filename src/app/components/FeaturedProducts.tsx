@@ -20,7 +20,7 @@ export default function FeaturedProducts() {
           throw new Error("Failed to fetch products");
         }
         const data: Product[] = await response.json();
-        setProducts(data.slice(0, 4));
+        setProducts(data.slice(82, 86));
       } catch (error) {
         setError("Unable to load featured products.");
       } finally {
@@ -56,16 +56,30 @@ export default function FeaturedProducts() {
       </div>
 
       {loading && (
-        <p className="py-10 text-center text-[#647B85]">
-          Loading featured products...
-        </p>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div
+              key={index}
+              className="overflow-hidden rounded-2xl bg-white shadow-sm"
+            >
+              <div className="h-52 animate-pulse bg-[#E9EEF0]" />
+
+              <div className="space-y-3 p-4">
+                <div className="h-3 w-1/3 animate-pulse rounded bg-gray-200" />
+                <div className="h-4 w-full animate-pulse rounded bg-gray-200" />
+                <div className="h-4 w-2/3 animate-pulse rounded bg-gray-200" />
+                <div className="h-5 w-1/4 animate-pulse rounded bg-gray-200" />
+              </div>
+
+              <div className="px-4 pb-4">
+                <div className="h-10 animate-pulse rounded-full bg-gray-200" />
+              </div>
+            </div>
+          ))}
+        </div>
       )}
 
-      {error && (
-        <p className="py-10 text-center text-red-500">
-          {error}
-        </p>
-      )}
+      {error && <p className="py-10 text-center text-red-500">{error}</p>}
 
       {!loading && !error && (
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -77,9 +91,10 @@ export default function FeaturedProducts() {
               <Link href={`/products/${product.id}`}>
                 <div className="relative flex h-52 items-center justify-center bg-[#E9EEF0] p-6">
                   <Image
-                    src={product.image}
+                    src={product.thumbnail}
                     alt={product.title}
                     fill
+                    unoptimized
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-contain p-6 transition duration-300 group-hover:scale-105"
                   />

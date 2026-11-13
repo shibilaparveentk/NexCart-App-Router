@@ -7,6 +7,13 @@ import {
   MousePointerClick,
 } from "lucide-react";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | NexCart",
+  description:
+    "Learn about NexCart and our mission to make everyday online shopping simple and convenient.",
+};
 
 export default function AboutPage() {
   const reasons = [
@@ -41,14 +48,12 @@ export default function AboutPage() {
             </p>
             <h1 className="mt-4 text-4xl font-semibold  text-[#263740] sm:text-5xl lg:text-6xl">
               Shopping made
-              <span className="block text-[#647B85]">
-                simple for you.
-              </span>
+              <span className="block text-[#647B85]">simple for you.</span>
             </h1>
             <p className="mt-6 max-w-lg text-sm leading-7 text-gray-600 sm:text-base">
-              Welcome to NexCart! We bring together a variety of products
-              in one place to make discovering your everyday favourites
-              easier and more enjoyable.
+              Welcome to NexCart! We bring together a variety of products in one
+              place to make discovering your everyday favourites easier and more
+              enjoyable.
             </p>
             <Link
               href="/products"
@@ -60,34 +65,16 @@ export default function AboutPage() {
           </div>
 
           {/* Visual Section */}
-          {/* <div className="flex min-h-64 items-center justify-center rounded-3xl bg-[#263740] p-8 sm:min-h-80">
-            <div className="text-center">
-              <div className="mx-auto flex size-24 items-center justify-center rounded-3xl bg-white/10">
-                <ShoppingBag
-                  size={52}
-                  strokeWidth={1.3}
-                  className="text-[#B8C7CC]"
-                />
-              </div>
-              <h2 className="mt-7 text-2xl font-semibold text-white">
-                Discover. Shop. Enjoy.
-              </h2>
-              <p className="mt-3 text-sm text-white/60">
-                Your everyday shopping destination.
-              </p>
-            </div>
-          </div> */}
-          {/* Visual Section */}
-<div className="relative min-h-64 overflow-hidden rounded-3xl sm:min-h-80">
-  <Image
-    src="/images/about/about-hero.png"
-    alt="NexCart shopping collection"
-    fill
-    priority
-    sizes="(max-width: 768px) 100vw, 50vw"
-    className="object-cover"
-  />
-</div>
+          <div className="relative min-h-64 overflow-hidden rounded-3xl sm:min-h-80">
+            <Image
+              src="/images/about/about-hero.png"
+              alt="NexCart shopping collection"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -104,10 +91,10 @@ export default function AboutPage() {
             Making everyday shopping easier.
           </h2>
           <p className="mt-5 text-sm leading-8 text-gray-500 sm:text-base">
-            At NexCart, our goal is to bring a convenient and enjoyable
-            shopping experience to everyone. We want to make it easier
-            to explore different products, discover new favourites and
-            find what you need in one place.
+            At NexCart, our goal is to bring a convenient and enjoyable shopping
+            experience to everyone. We want to make it easier to explore
+            different products, discover new favourites and find what you need
+            in one place.
           </p>
         </div>
       </section>
@@ -123,8 +110,8 @@ export default function AboutPage() {
               Why Shop with NexCart?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-500">
-              We focus on making your shopping journey simple,
-              convenient and enjoyable.
+              We focus on making your shopping journey simple, convenient and
+              enjoyable.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -150,7 +137,6 @@ export default function AboutPage() {
               );
             })}
           </div>
-
         </div>
       </section>
 
@@ -167,17 +153,13 @@ export default function AboutPage() {
           </div>
           <div className="space-y-5">
             <div>
-              <h3 className="font-semibold text-[#263740]">
-                Simplicity
-              </h3>
+              <h3 className="font-semibold text-[#263740]">Simplicity</h3>
               <p className="mt-1 text-sm leading-7 text-gray-600">
                 Keeping the shopping experience easy to understand and use.
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-[#263740]">
-                Convenience
-              </h3>
+              <h3 className="font-semibold text-[#263740]">Convenience</h3>
               <p className="mt-1 text-sm leading-7 text-gray-600">
                 Bringing different product categories together in one place.
               </p>
@@ -218,7 +200,6 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
-
     </div>
   );
 }

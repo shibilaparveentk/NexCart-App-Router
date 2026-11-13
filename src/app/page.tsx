@@ -1,29 +1,28 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import { Suspense } from "react";
 import FeaturedProducts from "./components/FeaturedProducts";
 
 export default function Home() {
   const categories = [
     {
       name: "Electronics",
-      slug: "electronics",
+      slug: "smartphones",
       image: "/images/homepage/category/electronics.jpg",
     },
     {
       name: "Jewellery",
-      slug: "jewelery",
+      slug: "womens-jewellery",
       image: "/images/homepage/category/jewellery.jpg",
     },
     {
       name: "Men's Clothing",
-      slug: "men's clothing",
+      slug: "mens-shirts",
       image: "/images/homepage/category/mens-clothing.jpg",
     },
     {
       name: "Women's Clothing",
-      slug: "women's clothing",
+      slug: "womens-dresses",
       image: "/images/homepage/category/womens-clothing.jpg",
     },
   ];
@@ -58,6 +57,7 @@ export default function Home() {
               alt="Discover the latest fashion collection"
               fill
               priority
+              unoptimized
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center "
             />
@@ -111,15 +111,7 @@ export default function Home() {
         </div>
       </section>
       {/* featured products */}
-      <Suspense
-        fallback={
-          <p className="py-10 text-center text-[#647B85]">
-            Loading featured products...
-          </p>
-        }
-      >
-        <FeaturedProducts />
-      </Suspense>
+      <FeaturedProducts />
       {/* cta */}
       <section className="mx-auto max-w-7xl py-5 sm:py-7 lg:py-9">
         <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-[#263740] px-6 py-12 text-center sm:px-12 md:flex-row md:text-left">

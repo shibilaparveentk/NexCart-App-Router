@@ -7,7 +7,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Product List",
-  description: "Product list page",
+  description:
+    "Explore the NexCart collection and discover electronics, fashion, beauty, home essentials and more.",
 };
 
 async function ProductsList({
@@ -22,7 +23,7 @@ async function ProductsList({
   const filteredProducts = products.filter((product) =>
     `${product.title} ${product.category}`
       .toLowerCase()
-      .includes(search.toLowerCase())
+      .includes(search.toLowerCase()),
   );
 
   if (filteredProducts.length === 0) {
@@ -33,8 +34,8 @@ async function ProductsList({
         </h2>
 
         <p className="mt-3 text-sm text-gray-500">
-          Sorry, we couldn&apos;t find any products matching &quot;{search}&quot;.
-          Try searching for something else.
+          Sorry, we couldn&apos;t find any products matching &quot;{search}
+          &quot;. Try searching for something else.
         </p>
       </div>
     );
@@ -58,9 +59,7 @@ export default function Product({
 
         <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-semibold text-[#263740] sm:text-5xl lg:text-6xl">
           Find your
-          <span className="block text-[#647B85]">
-            everyday favourites.
-          </span>
+          <span className="block text-[#647B85]">everyday favourites.</span>
         </h1>
 
         <p className="mt-5 text-sm text-gray-500">

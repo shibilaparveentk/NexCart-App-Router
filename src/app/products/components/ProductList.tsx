@@ -1,7 +1,8 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import AddToCartButton from "../../components/AddToCartButton";
-import { Product } from "../../types/product";
+import type { Product } from "../../types/product";
 
 export default function ProductList({ products }: { products: Product[] }) {
   return (
@@ -15,8 +16,9 @@ export default function ProductList({ products }: { products: Product[] }) {
             <Link href={`/products/${product.id}`} className="block">
               <div className="relative h-40 bg-[#F1F4F4] sm:h-48">
                 <Image
-                  src={product.image}
+                  src={product.thumbnail}
                   alt={product.title}
+                  unoptimized
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-contain p-6 transition duration-300 group-hover:scale-105"
@@ -35,6 +37,7 @@ export default function ProductList({ products }: { products: Product[] }) {
                 </p>
               </div>
             </Link>
+
             <div className="px-4 pb-4">
               <AddToCartButton product={product} />
             </div>

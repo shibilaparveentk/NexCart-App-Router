@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -55,9 +54,12 @@ export default function Navbar() {
               <Search size={17} className="shrink-0 text-[#647B85]" />
               <input
                 type="text"
+                aria-label="Search products"
                 placeholder="Search products..."
                 onChange={(e) =>
-                  router.push(`/products?search=${encodeURIComponent(e.target.value)}`)
+                  router.replace(
+                    `/products?search=${encodeURIComponent(e.target.value)}`,
+                  )
                 }
                 className="w-full min-w-0 bg-transparent text-sm text-[#263740] outline-none placeholder:text-gray-400"
               />
@@ -101,9 +103,12 @@ export default function Navbar() {
               <Search size={17} className="shrink-0 text-[#647B85]" />
               <input
                 type="text"
+                aria-label="Search products"
                 placeholder="Search products..."
                 onChange={(e) =>
-                  router.push(`/products?search=${encodeURIComponent(e.target.value)}`)
+                  router.replace(
+                    `/products?search=${encodeURIComponent(e.target.value)}`,
+                  )
                 }
                 className="w-full min-w-0 bg-transparent text-sm text-[#263740] outline-none placeholder:text-gray-400"
               />

@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-} from "react";
-
-import { Product } from "../app/types/product";
+import { createContext, useContext, useState, type ReactNode } from "react";
+import type { Product } from "../app/types/product";
 
 export interface CartItem extends Product {
   quantity: number;
@@ -31,18 +25,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const addToCart = (product: Product) => {
     setCartItems((currentItems) => {
-      const existingItem = currentItems.find(
-        (item) => item.id === product.id
-      );
+      const existingItem = currentItems.find((item) => item.id === product.id);
 
       if (existingItem) {
         return currentItems.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
+            : item,
         );
       }
-
       return [...currentItems, { ...product, quantity: 1 }];
     });
   };
@@ -50,10 +41,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const increaseQuantity = (productId: number) => {
     setCartItems((currentItems) =>
       currentItems.map((item) =>
-        item.id === productId
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
     );
   };
 
@@ -63,15 +52,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
         .map((item) =>
           item.id === productId
             ? { ...item, quantity: item.quantity - 1 }
-            : item
+            : item,
         )
-        .filter((item) => item.quantity > 0)
+        .filter((item) => item.quantity > 0),
     );
   };
 
   const removeFromCart = (productId: number) => {
     setCartItems((currentItems) =>
-      currentItems.filter((item) => item.id !== productId)
+      currentItems.filter((item) => item.id !== productId),
     );
   };
 
@@ -79,14 +68,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCartItems([]);
   };
 
-  const cartCount = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const cartTotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
-    0
+    0,
   );
 
   return (

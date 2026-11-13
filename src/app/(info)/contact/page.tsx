@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-export default function contactPage() {
+export default function ContactPage() {
   const contactDetails = [
     {
       icon: Mail,
@@ -206,7 +206,7 @@ export default function contactPage() {
                 />
               </div>
               <button
-                type="button"
+                type="submit"
                 className="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#263740] px-6 py-4 text-sm font-semibold text-white shadow-sm transition hover:bg-[#3D5661] focus:outline-none sm:w-auto"
               >
                 Send message

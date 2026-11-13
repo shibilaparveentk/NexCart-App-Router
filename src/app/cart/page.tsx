@@ -86,9 +86,10 @@ export default function Cart() {
                 {/* Product Image */}
                 <div className="relative flex h-24 w-24 shrink-0 items-center justify-center rounded-xl bg-[#E9EEF0] p-3 sm:h-32 sm:w-32">
                   <Image
-                    src={item.image}
+                    src={item.thumbnail}
                     alt={item.title}
                     fill
+                    unoptimized
                     sizes="(max-width: 640px) 96px, 128px"
                     className="object-contain p-3"
                   />
