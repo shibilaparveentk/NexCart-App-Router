@@ -28,7 +28,7 @@ export default function Home() {
   ];
   return (
     <div className="bg-[#F7F9FA] pb-10">
-      <section className="mx-auto max-w-7xl py-5 sm:py-7 lg:py-9">
+      <section className="mx-auto max-w-7xl py-4 sm:py-7 lg:py-9">
         <div className="grid grid-cols-1 overflow-hidden rounded-3xl bg-[#F1F4F4] md:grid-cols-2 md:min-h-125">
           <div className="flex flex-col gap-4 justify-center px-6 py-12 sm:px-10 lg:px-16 lg:py-16">
             <p className="text-sm font-semibold uppercase text-[#647B85]">
@@ -65,7 +65,7 @@ export default function Home() {
         </div>
       </section>
       {/* categories */}
-      <section className="mx-auto max-w-7xl py-5 sm:py-7 lg:py-9">
+      <section className="mx-auto max-w-7xl  px-4 py-10 sm:py-14">
         <div className="mb-7 flex items-end justify-between gap-4 sm:mb-9">
           <div>
             <p className="text-xs font-semibold uppercase  text-[#647B85]">
@@ -113,7 +113,7 @@ export default function Home() {
       {/* featured products */}
       <FeaturedProducts />
       {/* cta */}
-      <section className="mx-auto max-w-7xl py-5 sm:py-7 lg:py-9">
+      <section className="mx-auto max-w-7xl px-4 py-7 sm:py-14">
         <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-[#263740] px-6 py-12 text-center sm:px-12 md:flex-row md:text-left">
           <div>
             <p className="text-xs font-semibold uppercase text-[#B8C7CC]">

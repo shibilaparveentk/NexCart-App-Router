@@ -6,7 +6,6 @@ import {
   Heart,
   MousePointerClick,
 } from "lucide-react";
-import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -40,40 +39,30 @@ export default function AboutPage() {
   return (
     <div className="bg-[#F7F9FA]">
       {/* herosection */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:py-18">
-        <div className="grid items-center gap-10 overflow-hidden rounded-3xl bg-[#F1F4F4] p-7 sm:p-10 md:grid-cols-2 lg:p-16">
-          <div>
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 lg:py-15">
+        <div className=" rounded-3xl bg-[#F1F4F4] p-4 sm:p-8 lg:p-14">
+          <div className="flex gap-5 items-center justify-center flex-col text-center">
+            <div className="flex size-14 items-center justify-center rounded-2xl bg-[#E0E8EA]">
+              <ShoppingBag size={27} className="text-[#647B85]" />
+            </div>
             <p className="text-xs font-semibold uppercase text-[#647B85]">
               ABOUT NEXCART
             </p>
-            <h1 className="mt-4 text-4xl font-semibold  text-[#263740] sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-semibold text-[#263740] sm:text-5xl lg:text-6xl">
               Shopping made
               <span className="block text-[#647B85]">simple for you.</span>
             </h1>
-            <p className="mt-6 max-w-lg text-sm leading-7 text-gray-600 sm:text-base">
+            <p className=" max-w-xl text-sm leading-8 text-gray-600 sm:text-base">
               Welcome to NexCart! We bring together a variety of products in one
               place to make discovering your everyday favourites easier and more
               enjoyable.
             </p>
             <Link
               href="/products"
-              className="mt-8 inline-flex w-fit items-center gap-3 rounded-full bg-[#263740] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#647B85]"
+              className="inline-flex w-fit items-center rounded-full bg-[#263740] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#647B85]"
             >
               Explore Collection
-              <ArrowRight size={17} />
             </Link>
-          </div>
-
-          {/* Visual Section */}
-          <div className="relative min-h-64 overflow-hidden rounded-3xl sm:min-h-80">
-            <Image
-              src="/images/about/about-hero.png"
-              alt="NexCart shopping collection"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
           </div>
         </div>
       </section>
